@@ -60,7 +60,7 @@ class UserRepositoryImpl: UserRepository {
             user.password?.let { password -> it[UserEntity.password] = password }
             user.salt?.let { salt -> it[UserEntity.salt] = salt }
         }
-        if (count > 0) {
+        if (count == 0) {
             throw IllegalArgumentException("User not found")
         }
         true
@@ -70,7 +70,7 @@ class UserRepositoryImpl: UserRepository {
         val count = UserEntity.deleteWhere {
             UserEntity.id eq id
         }
-        if (count > 0) {
+        if (count == 0) {
             throw IllegalArgumentException("User not found")
         }
         true

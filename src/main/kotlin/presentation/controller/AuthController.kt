@@ -1,24 +1,17 @@
 package presentation.controller
 
-import core.security.tokens.AccessToken
 import core.security.tokens.RefreshToken
 import domain.model.UserCreateDto
-import domain.usecase.AuthLoginUsecase
-import domain.usecase.AuthLogoutUsecase
-import domain.usecase.AuthSignupUsecase
 import presentation.dto.request.AuthLoginRequest
 import presentation.dto.request.AuthSignupRequest
-import presentation.dto.response.AuthResponse
 import presentation.dto.response.UserResponse
 import core.utils.Result
+import domain.service.AuthService
 import presentation.dto.response.Response
-import java.sql.Ref
 import java.util.UUID
 
 class AuthController(
-    private val authSignupUsecase: AuthSignupUsecase,
-    private val authLoginUsecase: AuthLoginUsecase,
-    private val authLogoutUsecase: AuthLogoutUsecase,
+    private val service: AuthService,
 ) {
     suspend fun signup(request: AuthSignupRequest): Result<Pair<Response, RefreshToken>> {
         return try {
@@ -27,7 +20,7 @@ class AuthController(
                 email = request.email,
                 password = request.password,
             )
-            val result = authSignupUsecase(user)
+            val result = service.signup(user)
             val response = Pair(
                 first = Response(
                     user = UserResponse(
@@ -48,7 +41,7 @@ class AuthController(
 
     suspend fun login(request: AuthLoginRequest): Result<Pair<Response, RefreshToken>> {
         return try {
-            val result = authLoginUsecase(request.username, request.password)
+            val result = service.login(request.username, request.password)
 
             val response = Pair(
                 first = Response(
@@ -70,7 +63,7 @@ class AuthController(
 
     suspend fun logout(id: UUID): Result<Boolean> {
         return try {
-            val result = authLogoutUsecase(id)
+            val result = service.logout(id)
             Result.Success(result > 0)
         } catch (e: Exception) {
             Result.Failure(e.localizedMessage)
