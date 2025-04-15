@@ -6,6 +6,7 @@ kotlin-version = "2.1.20"
 ktor-version = "3.1.2"
 logback-version = "1.4.14"
 postgres-version = "42.7.5"
+commons-codec-version = "1.16.0"
 
 [libraries]
 ktor-server-cors = { module = "io.ktor:ktor-server-cors", version.ref = "ktor-version" }
@@ -18,6 +19,7 @@ postgresql = { module = "org.postgresql:postgresql", version.ref = "postgres-ver
 h2 = { module = "com.h2database:h2", version.ref = "h2-version" }
 exposed-core = { module = "org.jetbrains.exposed:exposed-core", version.ref = "exposed-version" }
 exposed-jdbc = { module = "org.jetbrains.exposed:exposed-jdbc", version.ref = "exposed-version" }
+exposed-datetime = { module = "org.jetbrains.exposed:exposed-kotlin-datetime", version.ref = "exposed-version" }
 ktor-server-call-logging = { module = "io.ktor:ktor-server-call-logging", version.ref = "ktor-version" }
 ktor-server-auth-jwt = { module = "io.ktor:ktor-server-auth-jwt", version.ref = "ktor-version" }
 ktor-server-netty = { module = "io.ktor:ktor-server-netty", version.ref = "ktor-version" }
@@ -25,6 +27,9 @@ logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "lo
 ktor-server-config-yaml = { module = "io.ktor:ktor-server-config-yaml", version.ref = "ktor-version" }
 ktor-server-test-host = { module = "io.ktor:ktor-server-test-host", version.ref = "ktor-version" }
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin-version" }
+commons-codec = { module = "commons-codec:commons-codec", version.ref = "commons-codec-version" }
+ktor-koin = { module = "io.insert-koin:koin-ktor", version.ref = "ktor-version" }
+ktor-koin-logger = { module = "io.insert-koin:koin-logger-slf4j", version.ref = "ktor-version" }
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin-version" }
