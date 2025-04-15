@@ -1,16 +1,12 @@
 import core.config.*
 import core.security.hashing.impl.SHA256HashingService
 import core.security.tokens.TokenConfig
-import data.repository.RefreshTokenRepositoryImpl
-import data.repository.UserRepositoryImpl
-import domain.service.AuthService
-import domain.service.UserService
+import data.repository.*
+import domain.service.*
 import io.ktor.server.application.*
 import io.ktor.server.routing.*
-import presentation.controller.AuthController
-import presentation.controller.UserController
-import presentation.routes.configureAuthRoute
-import presentation.routes.configureUsersRoute
+import presentation.controller.*
+import presentation.routes.*
 
 fun main(args: Array<String>) {
     io.ktor.server.netty.EngineMain.main(args)
@@ -36,9 +32,15 @@ fun Application.module() {
         secret = environment.config.property("jwt.refresh.secret").getString(),
     )
 
+    // REPOSITORIES
     val userRepository = UserRepositoryImpl()
     val tokenRepository = RefreshTokenRepositoryImpl()
 
+    val buildingRepository = BuildingRepositoryImpl()
+    val roomRepository = RoomRepositoryImpl()
+    val bookingRepository = BookingRepositoryImpl()
+
+    // SERVICES
     val hashingService = SHA256HashingService()
 
     val authService = AuthService(
@@ -52,13 +54,25 @@ fun Application.module() {
         hashingService,
     )
 
+    val buildingService = BuildingService(buildingRepository)
+    val roomService = RoomService(roomRepository)
+    val bookingService = BookingService(bookingRepository)
+
+    // CONTROLLERS
     val authController = AuthController(authService)
     val userController = UserController(userService)
+
+    val buildingController = BuildingController(buildingService)
+    val roomController = RoomController(roomService)
+    val bookingController = BookingController(bookingService)
 
     routing {
         route("api/") {
             configureAuthRoute(authController)
             configureUsersRoute(userController)
+            configureBuildingRoute(buildingController)
+            configureRoomRoute(roomController)
+            configureBookingRoute(bookingController)
         }
     }
 }
