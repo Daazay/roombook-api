@@ -12,5 +12,5 @@ object RoomEntity : UUIDTable("rooms") {
     val type = enumerationByName("type", 10, RoomType::class)
     val capacity = integer("capacity")
     val status = enumerationByName("status", 15, RoomStatus::class)
-    val createdAt = datetime("created_at").defaultExpression(CurrentDateTime)
+//    val createdAt = datetime("created_at").defaultExpression(CurrentDateTime)
 }

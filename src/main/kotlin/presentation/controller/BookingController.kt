@@ -36,7 +36,7 @@ class BookingController(
                 startTime = created.startTime.toString(),
                 endTime = created.endTime.toString(),
                 status = created.status.toString(),
-                createdAt = created.createdAt.toString()
+//                createdAt = created.createdAt.toString()
             )
             Result.Success(response)
         } catch (e: Exception) {
@@ -54,7 +54,7 @@ class BookingController(
                 startTime = booking.startTime.toString(),
                 endTime = booking.endTime.toString(),
                 status = booking.status.toString(),
-                createdAt = booking.createdAt.toString()
+//                createdAt = booking.createdAt.toString()
             )
             Result.Success(response)
         } catch (e: Exception) {
@@ -73,7 +73,7 @@ class BookingController(
                     startTime = it.startTime.toString(),
                     endTime = it.endTime.toString(),
                     status = it.status.toString(),
-                    createdAt = it.createdAt.toString()
+//                    createdAt = it.createdAt.toString()
                 )
             }
             Result.Success(resposne)

@@ -33,7 +33,7 @@ data class RoomDto(
     val type: RoomType,
     val capacity: Int,
     val status: RoomStatus,
-    val createdAt: LocalDateTime,
+//    val createdAt: LocalDateTime,
 )
 
 data class RoomWithBuildingDto(
@@ -43,5 +43,5 @@ data class RoomWithBuildingDto(
     val type: RoomType,
     val capacity: Int,
     val status: RoomStatus,
-    val createdAt: LocalDateTime,
+//    val createdAt: LocalDateTime,
 )

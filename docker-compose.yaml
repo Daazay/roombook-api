@@ -1,0 +1,45 @@
+services:
+  app:
+    build: ./
+    container_name: app
+    environment:
+      DB_URL: ${DB_URL}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "8080:8080"
+    networks:
+      internal-network:
+        ipv4_address: 10.1.0.2
+#    depends_on:
+#      db:
+#        condition: service_healthy
+#  db:
+#    image: postgres:16-alpine
+#    container_name: postgres
+#    volumes:
+#      - postgres_data:/var/lib/postgresql/data
+#    environment:
+#      POSTGRES_DB: ${DB_NAME}
+#      POSTGRES_USER: ${DB_USER}
+#      POSTGRES_PASSWORD: ${DB_PASSWORD}
+#    healthcheck:
+#      test: ["CMD-SHELL", "pg_isready -d ${DB_NAME} -U ${DB_USER}"]
+#      interval: 10s
+#      timeout: 5s
+#      retries: 5
+#      start_period: 10s
+#    restart: unless-stopped
+#    networks:
+#      internal-network:
+#        ipv4_address: 10.1.0.3
+
+volumes:
+  postgres_data:
+
+networks:
+  internal-network:
+    name: internal-network
+    ipam:
+      config:
+        - subnet: 10.1.0.0/24

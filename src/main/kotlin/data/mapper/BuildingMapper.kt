@@ -10,7 +10,7 @@ fun InsertStatement<Number>.toBuildingDto(): BuildingDto {
         id = this[BuildingEntity.id].value,
         name = this[BuildingEntity.name],
         address = this[BuildingEntity.address],
-        createdAt = this[BuildingEntity.createdAt]
+//        createdAt = this[BuildingEntity.createdAt]
     )
 }
 
@@ -19,6 +19,6 @@ fun ResultRow.toBuildingDto(): BuildingDto {
         id = this[BuildingEntity.id].value,
         name = this[BuildingEntity.name],
         address = this[BuildingEntity.address],
-        createdAt = this[BuildingEntity.createdAt]
+//        createdAt = this[BuildingEntity.createdAt]
     )
 }

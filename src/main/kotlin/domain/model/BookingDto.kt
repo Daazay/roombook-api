@@ -28,7 +28,7 @@ data class BookingDto(
     val startTime: LocalDateTime,
     var endTime: LocalDateTime,
     val status: BookingStatus,
-    val createdAt: LocalDateTime,
+//    val createdAt: LocalDateTime,
 )
 
 data class BookingWithUserAndRoomDto(
@@ -38,5 +38,5 @@ data class BookingWithUserAndRoomDto(
     val startTime: LocalDateTime,
     var endTime: LocalDateTime,
     val status: BookingStatus,
-    val createdAt: LocalDateTime,
+//    val createdAt: LocalDateTime,
 )

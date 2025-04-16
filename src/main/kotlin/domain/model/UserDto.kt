@@ -14,7 +14,7 @@ data class UserDto(
     val password: String,
     val salt: String,
     val role: UserRole,
-    val createdAt: LocalDateTime,
+//    val createdAt: LocalDateTime,
 )
 
 data class UserCreateDto(

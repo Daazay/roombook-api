@@ -12,8 +12,8 @@ data class RoomResponse(
     val type: String,
     val capacity: Int,
     val status: String,
-    @SerialName("created_at")
-    val createdAt: String,
+//    @SerialName("created_at")
+//    val createdAt: String,
 )
 
 @Serializable
@@ -25,6 +25,6 @@ data class RoomWithBuildingResponse(
     val type: String,
     val capacity: Int,
     val status: String,
-    @SerialName("created_at")
-    val createdAt: String,
+//    @SerialName("created_at")
+//    val createdAt: String,
 )

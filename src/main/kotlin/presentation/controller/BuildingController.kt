@@ -24,7 +24,7 @@ class BuildingController(
                 id = created.id.toString(),
                 name = created.name,
                 address = created.address,
-                createdAt = created.createdAt.toString()
+//                createdAt = created.createdAt.toString()
             )
             Result.Success(response)
         } catch (e: Exception) {
@@ -39,7 +39,7 @@ class BuildingController(
                 id = building.id.toString(),
                 name = building.name,
                 address = building.address,
-                createdAt = building.createdAt.toString()
+//                createdAt = building.createdAt.toString()
             )
             Result.Success(response)
         } catch (e: Exception) {
@@ -55,7 +55,7 @@ class BuildingController(
                     id = building.id.toString(),
                     name = building.name,
                     address = building.address,
-                    createdAt = building.createdAt.toString()
+//                    createdAt = building.createdAt.toString()
                 )
             }
             Result.Success(response)

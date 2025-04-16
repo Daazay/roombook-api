@@ -22,14 +22,18 @@ class RefreshTokenRepositoryImpl: RefreshTokenRepository {
             throw IllegalArgumentException("User not found.")
         }
 
-        RefreshTokenEntity.upsert(
-            RefreshTokenEntity.id,
-            where = { RefreshTokenEntity.id eq userId },
-            onUpdate = { it[RefreshTokenEntity.token] = token },
-        ) {
-            it[id] = userId
-            it[RefreshTokenEntity.token] = token
-        }.toTokenDto()
+        if (RefreshTokenEntity.selectAll().where { RefreshTokenEntity.id eq userId }.empty()) {
+            RefreshTokenEntity.insert {
+                it[id] = userId
+                it[RefreshTokenEntity.token] = token
+            }.toTokenDto()
+        } else {
+            val count = RefreshTokenEntity.update({ RefreshTokenEntity.id eq userId }) {
+                it[RefreshTokenEntity.token] = token
+            }
+            RefreshTokenEntity.selectAll().where { RefreshTokenEntity.id eq userId }
+                .single().toTokenDto()
+        }
     }
 
     override suspend fun deleteByUserId(userId: UUID): Int = tranzaction {

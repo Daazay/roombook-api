@@ -8,6 +8,6 @@ data class BuildingResponse(
     val id: String,
     val name: String,
     val address: String,
-    @SerialName("created_at")
-    val createdAt: String,
+//    @SerialName("created_at")
+//    val createdAt: String,
 )

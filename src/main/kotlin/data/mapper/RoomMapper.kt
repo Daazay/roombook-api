@@ -14,7 +14,7 @@ fun InsertStatement<Number>.toRoomDto(): RoomDto {
         type = this[RoomEntity.type],
         status = this[RoomEntity.status],
         capacity = this[RoomEntity.capacity],
-        createdAt = this[RoomEntity.createdAt]
+//        createdAt = this[RoomEntity.createdAt]
     )
 }
 
@@ -26,7 +26,7 @@ fun ResultRow.toRoomDto(): RoomDto {
         type = this[RoomEntity.type],
         status = this[RoomEntity.status],
         capacity = this[RoomEntity.capacity],
-        createdAt = this[RoomEntity.createdAt]
+//        createdAt = this[RoomEntity.createdAt]
     )
 }
 
@@ -38,6 +38,6 @@ fun ResultRow.toRoomWithBuildingDto(): RoomWithBuildingDto {
         type = this[RoomEntity.type],
         status = this[RoomEntity.status],
         capacity = this[RoomEntity.capacity],
-        createdAt = this[RoomEntity.createdAt]
+//        createdAt = this[RoomEntity.createdAt]
     )
 }

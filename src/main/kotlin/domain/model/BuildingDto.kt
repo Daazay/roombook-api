@@ -17,5 +17,5 @@ data class BuildingDto(
     val id: UUID,
     val name: String,
     val address: String,
-    val createdAt: LocalDateTime,
+//    val createdAt: LocalDateTime,
 )

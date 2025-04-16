@@ -1,0 +1,25 @@
+ktor:
+  application:
+    modules:
+      - ApplicationKt.module
+  deployment:
+    port: 8081
+cors:
+  host: "*"
+  schemes: [ "http", "https" ]
+storage:
+  driver: "org.h2.Driver"
+  url: "jdbc:h2:mem:test;DB_CLOSE_DELAY=-1"
+  user: "user"
+  password: ""
+jwt:
+  issuer: "issuer"
+  domain: "domain"
+  audience: "audience"
+  realm: "realm"
+  access:
+    secret: "ACCESS PHRASE"
+    expiresIn: 1800000
+  refresh:
+    secret: "REFRESH PHRASE"
+    expiresIn: 1209600000

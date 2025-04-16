@@ -14,7 +14,7 @@ fun InsertStatement<Number>.toBookingDto(): BookingDto {
         startTime = this[BookingEntity.startTime],
         endTime = this[BookingEntity.endTime],
         status = this[BookingEntity.status],
-        createdAt = this[BookingEntity.createdAt]
+//        createdAt = this[BookingEntity.createdAt]
     )
 }
 
@@ -26,7 +26,7 @@ fun ResultRow.toBookingDto(): BookingDto {
         startTime = this[BookingEntity.startTime],
         endTime = this[BookingEntity.endTime],
         status = this[BookingEntity.status],
-        createdAt = this[BookingEntity.createdAt]
+//        createdAt = this[BookingEntity.createdAt]
     )
 }
 
@@ -38,6 +38,6 @@ fun ResultRow.toBookingWithUserAndRoomDto(): BookingWithUserAndRoomDto {
         startTime = this[BookingEntity.startTime],
         endTime = this[BookingEntity.endTime],
         status = this[BookingEntity.status],
-        createdAt = this[BookingEntity.createdAt]
+//        createdAt = this[BookingEntity.createdAt]
     )
 }

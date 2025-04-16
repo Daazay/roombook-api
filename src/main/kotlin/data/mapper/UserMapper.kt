@@ -13,7 +13,7 @@ fun InsertStatement<Number>.toUserDto(): UserDto {
         role = this[UserEntity.role],
         password = this[UserEntity.password],
         salt = this[UserEntity.salt],
-        createdAt = this[UserEntity.createdAt]
+//        createdAt = this[UserEntity.createdAt]
     )
 }
 
@@ -25,6 +25,6 @@ fun ResultRow.toUserDto(): UserDto {
         role = this[UserEntity.role],
         password = this[UserEntity.password],
         salt = this[UserEntity.salt],
-        createdAt = this[UserEntity.createdAt]
+//        createdAt = this[UserEntity.createdAt]
     )
 }

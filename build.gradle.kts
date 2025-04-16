@@ -19,6 +19,12 @@ repositories {
     mavenCentral()
 }
 
+ktor {
+    fatJar {
+        archiveFileName.set("app.jar")
+    }
+}
+
 dependencies {
     implementation(libs.ktor.server.cors)
     implementation(libs.ktor.server.core)

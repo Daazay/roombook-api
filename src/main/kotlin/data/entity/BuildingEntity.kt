@@ -9,5 +9,5 @@ import java.util.UUID
 object BuildingEntity : UUIDTable("buildings") {
     val name = varchar("name", 255)
     val address = varchar("address", 255)
-    val createdAt = datetime("created_at").defaultExpression(CurrentDateTime)
+//    val createdAt = datetime("created_at").defaultExpression(CurrentDateTime)
 }

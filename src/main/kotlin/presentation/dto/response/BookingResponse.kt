@@ -15,8 +15,8 @@ data class BookingResponse(
     @SerialName("end_time")
     val endTime: String,
     val status: String,
-    @SerialName("created_at")
-    val createdAt: String,
+//    @SerialName("created_at")
+//    val createdAt: String,
 )
 
 @Serializable
@@ -31,6 +31,6 @@ data class BookingWithUserAndRoomResponse(
     @SerialName("end_time")
     val endTime: String,
     val status: String,
-    @SerialName("created_at")
-    val createdAt: String,
+//    @SerialName("created_at")
+//    val createdAt: String,
 )

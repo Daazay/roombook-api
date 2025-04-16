@@ -12,5 +12,5 @@ object BookingEntity : UUIDTable("bookings") {
     val startTime = datetime("start_time")
     val endTime = datetime("end_time")
     val status = enumerationByName("status", 10, BookingStatus::class)
-    val createdAt = datetime("created_at").defaultExpression(CurrentDateTime)
+//    val createdAt = datetime("created_at").defaultExpression(CurrentDateTime)
 }

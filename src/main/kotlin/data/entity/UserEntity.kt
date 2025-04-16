@@ -15,7 +15,7 @@ object UserEntity: UUIDTable("users") {
     val role = enumeration("role", UserRole::class).default(UserRole.USER)
     val password = varchar("password", 64)
     val salt = varchar("salt", 64)
-    val createdAt = datetime("created_at").defaultExpression(CurrentDateTime)
+//    val createdAt = datetime("created_at").defaultExpression(CurrentDateTime)
 
     init {
         index(true, id)

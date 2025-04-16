@@ -29,7 +29,7 @@ class RoomController(
                 status = created.status.toString(),
                 type = created.type.toString(),
                 capacity = created.capacity,
-                createdAt = created.createdAt.toString()
+//                createdAt = created.createdAt.toString()
             )
 
             Result.Success(response)
@@ -48,7 +48,7 @@ class RoomController(
                 status = room.status.toString(),
                 type = room.type.toString(),
                 capacity = room.capacity,
-                createdAt = room.createdAt.toString()
+//                createdAt = room.createdAt.toString()
             )
             Result.Success(response)
         } catch (e: Exception) {
@@ -67,7 +67,7 @@ class RoomController(
                     status = room.status.toString(),
                     type = room.type.toString(),
                     capacity = room.capacity,
-                    createdAt = room.createdAt.toString()
+//                    createdAt = room.createdAt.toString()
                 )
             }
             Result.Success(response)
@@ -87,7 +87,7 @@ class RoomController(
                     status = room.status.toString(),
                     type = room.type.toString(),
                     capacity = room.capacity,
-                    createdAt = room.createdAt.toString()
+//                    createdAt = room.createdAt.toString()
                 )
             }
             Result.Success(response)
